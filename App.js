@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import Announcements from './src/components/Announcements';
+import Holiday from './src/components/Holiday';
+import Home from './src/components/Home';
+import MainScreen from './src/components/Loginsreen';
+import SplashScreen from './src/components/SplashScreen';
+import Ipo from './src/components/ipo';
+import Boardmeetings from './src/components/boardmeetings'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator
+                screenOptions={{
+                    headerMode: 'none' // Move headerMode to screenOptions
+                }}
+            >
+                <Stack.Screen name="Splash" component={SplashScreen} />
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="MainScreen" component={MainScreen} />
+                <Stack.Screen name="ipo" component={Ipo} />
+                <Stack.Screen name="Holiday" component={Holiday} />
+                <Stack.Screen name="Announcements" component={Announcements} />
+                <Stack.Screen name="Boardmeetings" component={Boardmeetings} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+};
+
+export default App;

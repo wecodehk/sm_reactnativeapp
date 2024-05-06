@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "AwesomeProject",
+    "name": "BIG BULL",
     "slug": "AwesomeProject",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.brij8115.AwesomeProject"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1892d8e7-9a35-4ca5-b065-0bea9ca2e436"
+      }
     }
   }
 }
